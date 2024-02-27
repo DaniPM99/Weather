@@ -10,45 +10,32 @@ import UIKit
 class MainView: UIViewController {
     private let mainViewModel = MainViewModel(apiClient: APIClient())
     
-    /* let ubication: UITextView = {
-        let textView = UITextView()
-        textView.text = "Mi ubicación"
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
+     let ubication: UILabel = {
+        let uilabel = UILabel()
+         uilabel.text = "Mi ubicación"
+         uilabel.translatesAutoresizingMaskIntoConstraints = false
+        return uilabel
     }()
     
-    private let city: UITextView = {
-        let textView = UITextView()
-        textView.text = "Barcelona"
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
+    private let city: UILabel = {
+        let uilabel = UILabel()
+        uilabel.text = "Barcelona"
+        uilabel.translatesAutoresizingMaskIntoConstraints = false
+        return uilabel
     }()
     
-    private let temperature: UITextView = {
-        let textView = UITextView()
-        textView.text = String(14)
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()*/
-    
-    let emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Add Email"
-        textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+    private let temperature: UILabel = {
+        let uilabel = UILabel()
+        uilabel.text = String(14)
+        uilabel.translatesAutoresizingMaskIntoConstraints = false
+        return uilabel
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainViewModel.getWeather(withCountry: "Spain")
-        [emailTextField].forEach(view.addSubview)
-        
-        NSLayoutConstraint.activate([
-            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
-        /*[ubication,
+
+        [ubication,
          city,
          temperature]
             .forEach(view.addSubview)
@@ -66,7 +53,7 @@ class MainView: UIViewController {
         
             temperature.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             temperature.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])*/
+        ])
     }
 
 
