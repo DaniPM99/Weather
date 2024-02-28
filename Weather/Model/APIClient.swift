@@ -8,7 +8,7 @@
 import Foundation
 
 let headers = [
-    "X-RapidAPI-Key": Keys.apiKey,
+    "X-RapidAPI-Key": Constants.API_KEY,
     "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"
 ]
 
